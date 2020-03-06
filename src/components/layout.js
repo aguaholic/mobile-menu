@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Bar from '../components/Bar'
 // import Img from "gatsby-image"
 // import Header from "./header"
 import "./layout.css"
@@ -28,14 +27,8 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-    <Bar >
-      <Bar.Left>
-        <p>image</p>
-      </Bar.Left>
-      <Bar.Right>
-      <p>button</p>
-      </Bar.Right>
-    </Bar>
+
+    
     </>
   )
 }
