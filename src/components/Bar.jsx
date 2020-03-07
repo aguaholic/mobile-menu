@@ -3,25 +3,26 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const BarLeft = styled.div`
+    justify-content: flex-start;
     background-color: pink;
-    height: 100%;
 `;
+
 const BarRight = styled.div`
+    justify-content: flex-end;
     background-color: red;
-    height: 100%;
 `;
 
 const Container = styled.div`
     width: 100%;
     height: 40px;
     background-color: lightblue;
+    display: flex;
 
-    ${BarLeft} {
-    float: left;
-    }
-
-    ${BarRight} {
-    float: right;
+    ${BarLeft}, ${BarRight} {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 `;
 
