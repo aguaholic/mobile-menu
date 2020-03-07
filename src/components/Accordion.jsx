@@ -7,14 +7,14 @@ const Container = styled.div`
 `;
 
 const Accordion = ({ header, children, open }) => (
-    open? 
-    (
-        <Container>{header}</Container>
-    ) : (
-        <Container>
-            {header}
-            {children}
-        </Container>
+    !open
+        ? (
+            <Container>{header}</Container>
+        ) : (
+            <Container>
+                {header}
+                {children}
+            </Container>
         )
 )
 
