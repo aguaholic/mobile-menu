@@ -4,19 +4,18 @@ import styled from 'styled-components'
 
 const BarLeft = styled.div`
     justify-content: flex-start;
-    background-color: pink;
 `;
 
 const BarRight = styled.div`
     justify-content: flex-end;
-    background-color: red;
 `;
 
 const Container = styled.div`
     width: 100%;
     height: 40px;
-    background-color: lightblue;
     display: flex;
+    border-bottom: 1px solid lightgrey;
+    padding: 0 8px;
 
     ${BarLeft}, ${BarRight} {
         width: 50%;
