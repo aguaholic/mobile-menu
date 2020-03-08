@@ -29,7 +29,7 @@ const Item = styled.li`
 
 function List(props) {
     const list = [...props.data].map(item => (
-        <Item>
+        <Item key={item.id}>
             <div className="label">{item.item.toUpperCase()}</div>
             <div className="sub-label">{item.amount} products</div>
         </Item>
@@ -41,12 +41,11 @@ function List(props) {
                 {list}
             </ul>
         </Container>
-
     )
 }
 
 List.propTypes = {
-    list: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
 }
 
 export default List

@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { createGlobalStyle } from "styled-components";
-const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-    body {
-        font-family: 'Muli', serif;
-    }
-`
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes, faShoppingBag, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,6 +11,13 @@ import List from './List';
 import {daily} from '../helpers/itemList.js'
 import Logo from '../images/logo.png'
 
+import { createGlobalStyle } from "styled-components";
+const GlobalStyles = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+    body {
+        font-family: 'Muli', serif;
+    }
+`
 const Button = styled.button`
     padding: 0;
     width: 15px;
@@ -86,8 +86,3 @@ export const Container = () => {
         </>
     )
 }
-
-Container.propTypes = {
-    open:  PropTypes.bool.isRequired,
-}
-

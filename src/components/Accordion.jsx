@@ -4,12 +4,12 @@ import PropTypes from 'prop-types'
 const Accordion = ({ header, children, open }) => (
     !open
         ? (
-            <Container>{header}</Container>
+            <div>{header}</div>
         ) : (
-            <Container>
+            <div>
                 {header}
                 {children}
-            </Container>
+            </div>
         )
 )
 
