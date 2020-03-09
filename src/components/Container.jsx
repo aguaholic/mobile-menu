@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,7 +9,7 @@ import Bar from './Bar'
 import List from './List'
 import Carousel from './Carousel'
 
-import {daily} from '../helpers/itemList'
+import {daily, sports} from '../helpers/itemList'
 import Logo from '../images/logo.png'
 import Img1 from '../images/carousel/img1.jpg'
 import Img2 from '../images/carousel/img2.jpg'
@@ -20,6 +20,12 @@ import Img6 from '../images/carousel/img6.jpg'
 import Img7 from '../images/carousel/img7.jpg'
 import Img8 from '../images/carousel/img8.jpg'
 import Img9 from '../images/carousel/img9.jpg'
+
+const OuterContainer = styled.div`
+    * {
+            font-family: Helvetica, sans-serif;
+        }
+`;
 
 const Button = styled.button`
     padding: 0;
@@ -42,6 +48,11 @@ const Title = styled.p`
     font-weight: bold;
 `;
 
+const Icon = styled.div`
+    margin: 0 22%;
+    width: 15px;
+`;
+
 const ImgItemContainer = styled.div`
   max-height: 200px;
   width: 100px;
@@ -55,10 +66,11 @@ const ImgItem = styled.img.attrs({
 
 export const Container = () => {
     const [open, setOpen] = useState(false)
-    const [openList, setListOpen] = useState(false)
+    const [openFirstList, setFirstListOpen] = useState(false)
+    const [openSecondList, setSecondListOpen] = useState(false)
 
     return  (
-        <>
+        <OuterContainer>
             <Accordion
                 open={open}
                 header={(
@@ -90,24 +102,46 @@ export const Container = () => {
                     <ImgItemContainer><ImgItem src={Img9}/></ImgItemContainer>
                 </Carousel>
                 <Accordion
-                    open={openList}
+                    open={openFirstList}
                     header={
                         <Bar>
                             <Bar.Left>
                                 <Title>{daily.title.toUpperCase()}</Title>
                             </Bar.Left>
                             <Bar.Right>
-                                <Button onClick={() => setListOpen(!openList)}>
-                                    {openList
-                                        ?  <FontAwesomeIcon icon={faChevronUp} />
-                                        :  <FontAwesomeIcon icon={faChevronDown} />}
-                                </Button>
+                                <Icon>
+                                    <Button onClick={() => setFirstListOpen(!openFirstList)}>
+                                        {openFirstList
+                                            ?  <FontAwesomeIcon icon={faChevronUp} />
+                                            :  <FontAwesomeIcon icon={faChevronDown} />}
+                                    </Button>
+                                </Icon>
                             </Bar.Right>
                     </Bar>
                     }>
                     <List data={daily.items} />
                 </Accordion>
+                <Accordion
+                    open={openSecondList}
+                    header={
+                        <Bar>
+                            <Bar.Left>
+                                <Title>{sports.title.toUpperCase()}</Title>
+                            </Bar.Left>
+                            <Bar.Right>
+                                <Icon>
+                                    <Button onClick={() => setSecondListOpen(!openSecondList)}>
+                                        {!openSecondList
+                                            ?  <FontAwesomeIcon icon={faChevronDown} />
+                                            :  <FontAwesomeIcon icon={faChevronUp} />}
+                                    </Button>
+                                </Icon>
+                            </Bar.Right>
+                    </Bar>
+                    }>
+                    <List data={sports.items} />
+                </Accordion>
             </Accordion>
-        </>
+        </OuterContainer>
     )
 }

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const CarouselContainer = styled.div`
@@ -17,7 +18,7 @@ const CarouselItem = styled.div`
     margin-left: 10px;
 
     :first-child {
-        margin-left: 0;
+      margin-left: 0;
     }
 `;
 
@@ -36,6 +37,10 @@ export const Carousel = ({ children }) => {
       </CarouselContainer>
     )
   )
-};
+}
+
+Carousel.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 export default Carousel
