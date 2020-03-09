@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import styled from 'styled-components'
 
 const CarouselContainer = styled.div`
@@ -13,7 +13,7 @@ const CarouselContent = styled.div`
 `;
 
 const CarouselItem = styled.div`
-    width: 30%;
+    width: 33%;
     margin-left: 10px;
 
     :first-child {
@@ -29,15 +29,13 @@ export const Carousel = ({ children }) => {
     length > 0 && (
       <CarouselContainer>
         <CarouselContent>
-          <CarouselItem>{slides[slides.length - 1]}</CarouselItem>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>{slide}</CarouselItem>
           ))}
-          <CarouselItem>{slides[0]}</CarouselItem>
         </CarouselContent>
       </CarouselContainer>
     )
-  );
+  )
 };
 
 export default Carousel

@@ -11,46 +11,46 @@ import Carousel from './Carousel'
 
 import {daily} from '../helpers/itemList'
 import Logo from '../images/logo.png'
+import Img1 from '../images/carousel/img1.jpg'
+import Img2 from '../images/carousel/img2.jpg'
+import Img3 from '../images/carousel/img3.jpg'
+import Img4 from '../images/carousel/img4.jpg'
+import Img5 from '../images/carousel/img5.jpg'
+import Img6 from '../images/carousel/img6.jpg'
+import Img7 from '../images/carousel/img7.jpg'
+import Img8 from '../images/carousel/img8.jpg'
+import Img9 from '../images/carousel/img9.jpg'
 
-// import { createGlobalStyle } from "styled-components";
-// const GlobalStyles = createGlobalStyle`
-// @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-//     body {
-//         font-family: 'Muli', serif;
-//     }
-// `
 const Button = styled.button`
     padding: 0;
     width: 15px;
 `;
+
 const Img = styled.img`
     margin: 2px;
     width: 100%;
 `;
+
 const ImgContainer = styled.div`
     max-width: 100px;
     margin: 5px 8px 0;
 `;
+
 const Title = styled.p`
     margin: 0 22%;
     font-size: 12px;
     font-weight: bold;
 `;
 
-const StyledImage = styled.img.attrs({ 
-    alt: "Vrouwen sportsokken",
-    src: "https://images.prismic.io/stox/c5834f1d-9023-44f8-a4bd-40862e18308a_My+Post+%2887%29.jpg?auto=format&amp;fit=crop&amp;w=16&amp;ixlib=react-8.6.4",
-    sizes: "100vw"
-    })`
-  position: absolute; 
-  top: 0px; 
-  left: 0px; 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover;
-  object-position: center center; 
-  opacity: 0; 
-  transition-delay: 500ms;
+const ImgItemContainer = styled.div`
+  max-height: 200px;
+  width: 100px;
+`
+
+const ImgItem = styled.img.attrs({
+    alt: "Stox socks"
+})`
+    margin: 0;
 `
 
 export const Container = () => {
@@ -59,7 +59,6 @@ export const Container = () => {
 
     return  (
         <>
-            {/* <GlobalStyles /> */}
             <Accordion
                 open={open}
                 header={(
@@ -79,24 +78,17 @@ export const Container = () => {
                         </Bar.Right>
                     </Bar>
                 )}>
-            {/* <Slider /> */}
-
                 <Carousel>
-                    <div style={{ height: 200, width: 100, backgroundColor: 'blue'}}></div>
-                    <div style={{ height: 200, width: 100, backgroundColor: 'blue'}}></div>
-                    <div style={{ height: 200, width: 100, backgroundColor: 'blue'}}></div>
-                    <div style={{ height: 200, width: 100, backgroundColor: 'blue'}}></div>
-                    <div style={{ height: 200, width: 100, backgroundColor: 'blue'}}></div>
-
-                    {/* <StyledImage  /> */}
-                    {/* <StyledImage  /> */}
-                    {/* <StyledImage  /> */}
-                    {/* <StyledImage  /> */}
-                    {/* <StyledImage  /> */}
+                    <ImgItemContainer><ImgItem src={Img1}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img2}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img3}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img4}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img5}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img6}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img7}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img8}/></ImgItemContainer>
+                    <ImgItemContainer><ImgItem src={Img9}/></ImgItemContainer>
                 </Carousel>
-
-            
-            {/* <Slider /> */}
                 <Accordion
                     open={openList}
                     header={
@@ -116,7 +108,6 @@ export const Container = () => {
                     <List data={daily.items} />
                 </Accordion>
             </Accordion>
-            
         </>
     )
 }
