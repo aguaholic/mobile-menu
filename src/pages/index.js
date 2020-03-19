@@ -8,9 +8,6 @@ import {Container} from '../components/Container'
 const IndexPage = () => (
   <>
     <SEO title="Home" />
-    {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div> */}
     <Container />
   </>
 )
